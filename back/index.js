@@ -59,9 +59,9 @@ server.post('/service', async (req, res) => {
 
 server.put('/service/:id', async (req, res) => {
     const { id } = req.params; // Corrigido para usar req.params.id
-    const { name, description, active } = req.body;
+    const { name, value, description, active } = req.body;
     try {
-        const service = await Service.findByIdAndUpdate(id, { name, description, active }, { new: true });
+        const service = await Service.findByIdAndUpdate(id, { name, value, description, active }, { new: true });
         if (!service) return res.status(404).json({ message: 'Serviço não encontrado' });
         return res.json(service);
     } catch (error) {
