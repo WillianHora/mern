@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const server = express();
 server.use(express.json());
 
-const mongoURI = 'mongodb://localhost:27017/willfree'; // Substitua pela sua URI do MongoDB
+const mongoURI = 'mongodb://localhost:27017/willfree'; 
 mongoose.connect(mongoURI, {})
     .then(() => console.log('Conectado ao MongoDB'))
     .catch(err => console.error('Erro ao conectar ao MongoDB', err));
